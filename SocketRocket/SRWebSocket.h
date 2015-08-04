@@ -82,6 +82,8 @@ extern NSString *const SRHTTPResponseErrorKey;
 - (void)close;
 - (void)closeWithCode:(NSInteger)code reason:(NSString *)reason;
 
+- (NSUInteger)queuedSendingBufferBytes;
+
 // Send a UTF8 String or Data.
 - (void)send:(id)data;
 

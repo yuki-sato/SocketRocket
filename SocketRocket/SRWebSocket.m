@@ -682,6 +682,11 @@ static __strong NSData *CRLFCRLF;
     [self _pumpWriting];
 }
 
+- (NSUInteger)queuedSendingBufferBytes
+{
+    return [_outputBuffer length] - _outputBufferOffset;
+}
+
 - (void)send:(id)data;
 {
     NSAssert(self.readyState != SR_CONNECTING, @"Invalid State: Cannot call send: until connection is open");
